@@ -1,4 +1,3 @@
-
 # AZ-104 学习笔记 - Day 12
 
 ## 🎯 今日主题：Azure 存储服务
@@ -106,6 +105,29 @@
 - Append Blob 适合日志写入
 - Azure Files 支持 SMB/NFS + AD 验证
 - RA-GRS 才能跨区域读访问
+
+---
+
+## 🌐 Azure 与 AWS 存储资源对比
+
+| 维度           | Azure Storage                                 | AWS Storage                                 |
+|----------------|----------------------------------------------|---------------------------------------------|
+| 对象存储       | Blob Storage（Block/Append/Page Blob）        | S3（Standard/IA/Glacier）                   |
+| 文件存储       | Azure Files（SMB/NFS）                        | EFS（NFS）、FSx（SMB/NFS）                  |
+| 块存储         | Azure Disk（Page Blob 实现）                  | EBS（Elastic Block Store）                  |
+| 冗余选项       | LRS/ZRS/GRS/RA-GRS/GZRS/RA-GZRS               | S3 Standard、S3-IA、S3 One Zone、Cross-Region Replication、Glacier |
+| 访问层         | Hot/Cool/Archive                              | S3 Standard/IA/Glacier Deep Archive         |
+| 授权机制       | 存储账户密钥、SAS、RBAC、Azure AD             | Access Key、IAM Policy、Bucket Policy、临时凭证 |
+| 加密           | 默认 SSE，支持 BYOK，传输加密（HTTPS）         | 默认 SSE，支持 KMS/BYOK，传输加密（HTTPS）   |
+| 快照/备份      | Blob/Files 支持快照，定期备份                 | S3 Versioning、EBS/EFS 快照、备份服务        |
+| 文件共享集成   | 支持 AD DS/本地 AD 集成                       | 支持 AD 集成（FSx for Windows）             |
+| 生命周期管理   | 支持自动分层、归档、删除                      | 支持生命周期规则、自动分层、归档             |
+
+**总结：**
+- Azure Blob ≈ AWS S3，均支持多层存储、生命周期管理、加密与访问控制。
+- Azure Files 类似 AWS EFS/FSx，均支持文件共享和身份集成。
+- 冗余和归档机制两者均丰富，命名和细节略有差异，建议结合实际业务需求选择。
+- 授权和加密机制均支持企业级集成与合规要求。
 
 ---
 

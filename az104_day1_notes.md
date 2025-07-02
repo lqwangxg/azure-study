@@ -86,6 +86,28 @@ RBAC 允许你基于“谁、对什么资源、拥有什么权限”来控制访
 
 ---
 
+## 🌐 Azure、AWS、GCP 资源管理架构与 RBAC 支持对比
+
+| 维度             | Azure                                   | AWS                                         | GCP                                         |
+|------------------|-----------------------------------------|---------------------------------------------|---------------------------------------------|
+| 顶层组织         | Tenant（Azure AD）                      | Organization（可选，基于 AWS Organizations）| Organization（GCP Organization）            |
+| 管理分组         | Management Group                        | Organizational Unit (OU)                    | Folder                                      |
+| 订阅/账户        | Subscription                            | Account                                     | Project                                     |
+| 资源分组         | Resource Group                          | 无原生分组，常用标签或 CloudFormation Stack | 无原生分组，Project 内可用标签              |
+| 资源             | Resource（VM、Storage、Function 等）     | Resource（EC2、S3、Lambda 等）              | Resource（Compute Engine、Cloud Storage 等） |
+| 访问控制模型     | RBAC（Role-Based Access Control）        | IAM Policy（基于策略的访问控制）            | IAM Policy（基于角色的访问控制）             |
+| 作用域           | Tenant / Management Group / Subscription / Resource Group / Resource | Organization / OU / Account / Resource      | Organization / Folder / Project / Resource  |
+| 角色/权限        | 内置/自定义角色，细粒度权限              | 内置/自定义策略，细粒度权限                 | 内置/自定义角色，细粒度权限                  |
+| 最小权限原则     | 支持                                    | 支持                                        | 支持                                        |
+| 条件访问         | 支持（条件访问策略、PIM）                | 支持（条件策略、MFA、SCP）                  | 支持（条件 IAM、组织策略）                   |
+
+**说明：**
+- 三大云厂商均采用分层资源管理架构，便于大规模组织和权限治理。
+- Azure 以 Resource Group 为核心分组，AWS/GCP 以 Project/Account 为资源隔离单元。
+- RBAC（角色/策略）在三大平台均有实现，支持最小权限、细粒度授权和条件访问。
+- Azure RBAC 以角色为主，AWS/GCP 以策略/角色为主，均可自定义扩展。
+---
+
 ## 📅 下一步预告 - Day 2
 
 - 学习 VNet / Subnet / NSG 网络结构
