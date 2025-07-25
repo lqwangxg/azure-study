@@ -71,3 +71,15 @@
 
 ---
 
+## 🆚 Defender for Cloud vs Sentinel 功能与区别
+| 功能/属性  | Microsoft Defender for Cloud     | Microsoft Sentinel                   |
+| ------ | -------------------------------- | ------------------------------------ |
+| 类型     | CSPM + CWPP（安全姿态+工作负载保护）         | SIEM + SOAR（事件管理 + 自动响应）             |
+| 主要用途   | 安全建议、合规性评估、威胁检测、工作负载防护           | 安全日志分析、威胁检测、可视化、自动化响应                |
+| 数据来源   | Azure 资源、AWS、GCP、本地 Agent        | 多平台日志（Azure、AWS、GCP、Firewalls、等）     |
+| 可视化界面  | 安全评分、建议、合规报告                     | 威胁图、工作簿（KQL 可视化）、分析仪表板               |
+| 自动响应   | 通过 Defender 触发 Logic App         | 使用 Automation Rules + Playbooks 自动响应 |
+| 定价模式   | 按启用资源和保护范围收费                     | 按日志吞吐量（GB）和存储时间收费                    |
+| 深度防护支持 | 虚拟机、容器、Key Vault、SQL、Kubernetes等 | 无直接防护，专注于日志分析与响应                     |
+| 使用门槛   | 中等，主要基于平台服务                      | 稍高，需要 KQL、SIEM 知识                    |
+| 集成程度   | 与 Azure 平台深度整合                   | 可扩展性强，适合复杂多源环境                       |
