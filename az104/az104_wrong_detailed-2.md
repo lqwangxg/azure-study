@@ -53,7 +53,7 @@
 
 **你的答案：** `C`
 **正确答案：** `D`
-**解析：** Azure Files 是 PaaS 服务，不受 NSG 控制，NSG 主要作用于 IaaS 层虚拟机网络。
+**解析：** Azure Files 是 PaaS 服务，不受 NSG 控制，**NSG 主要作用于 IaaS 层虚拟机网络**。
 
 ## ❌ 第 23 题
 **题目：** 若你要将虚拟机日志发送到 Log Analytics，应配置：
